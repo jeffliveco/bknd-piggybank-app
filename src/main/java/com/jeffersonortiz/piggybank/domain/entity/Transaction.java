@@ -10,6 +10,7 @@ import java.util.Date;
 @Setter
 @Builder
 @AllArgsConstructor
+@NoArgsConstructor
 @ToString
 @Table(name = "transaction")
 public class Transaction {

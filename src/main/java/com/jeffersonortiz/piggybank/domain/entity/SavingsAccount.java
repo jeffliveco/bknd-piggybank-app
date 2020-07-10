@@ -10,6 +10,7 @@ import java.util.Set;
 @Setter
 @Builder
 @AllArgsConstructor
+@NoArgsConstructor
 @ToString
 @Table(name = "savings_account")
 public class SavingsAccount {

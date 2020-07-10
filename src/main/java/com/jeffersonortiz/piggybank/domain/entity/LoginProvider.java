@@ -1,10 +1,6 @@
 package com.jeffersonortiz.piggybank.domain.entity;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.*;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -18,6 +14,7 @@ import javax.persistence.Table;
 @Setter
 @Builder
 @AllArgsConstructor
+@NoArgsConstructor
 @ToString
 @Table(name = "login_provider")
 public class LoginProvider {

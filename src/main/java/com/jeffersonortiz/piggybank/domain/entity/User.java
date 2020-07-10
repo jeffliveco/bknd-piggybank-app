@@ -1,11 +1,6 @@
 package com.jeffersonortiz.piggybank.domain.entity;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.Setter;
-import lombok.Singular;
-import lombok.ToString;
+import lombok.*;
 
 import javax.persistence.*;
 import java.util.Set;
@@ -17,6 +12,7 @@ import java.util.Set;
 @AllArgsConstructor
 @ToString
 @Table(name = "user")
+@NoArgsConstructor
 public class User {
   @Id
   @GeneratedValue(strategy = GenerationType.AUTO)
