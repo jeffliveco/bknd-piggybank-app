@@ -1,0 +1,126 @@
+{
+	"info": {
+		"_postman_id": "8aa71b51-e10e-456e-9957-75476bb00a42",
+		"name": "PiggyBank",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "AddCash",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"value\": 100\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/piggy-bank/bank/add-cash",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"piggy-bank",
+						"bank",
+						"add-cash"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetTotalCash",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/piggy-bank/bank/account",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"piggy-bank",
+						"bank",
+						"account"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetTotalCashByCoin",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/piggy-bank/bank/account/100",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"piggy-bank",
+						"bank",
+						"account",
+						"100"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetTotalCoins",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/piggy-bank/tracking/coin",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"piggy-bank",
+						"tracking",
+						"coin"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetTotalCoinsByCoin",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/piggy-bank/tracking/coin/100",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"piggy-bank",
+						"tracking",
+						"coin",
+						"100"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
