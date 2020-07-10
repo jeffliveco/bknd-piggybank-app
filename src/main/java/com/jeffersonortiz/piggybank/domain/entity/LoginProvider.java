@@ -1,23 +1,29 @@
 package com.jeffersonortiz.piggybank.domain.entity;
 
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
 
-import javax.persistence.*;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
 
 @Entity
 @Getter
 @Setter
 @Builder
 @AllArgsConstructor
-@NoArgsConstructor
 @ToString
-@Table(name = "login-provider")
+@Table(name = "login_provider")
 public class LoginProvider {
   @Id
   @GeneratedValue(strategy = GenerationType.AUTO)
   private Long id;
   private String kind;
   private String value;
-  @OneToMany
-  private User user;
 }

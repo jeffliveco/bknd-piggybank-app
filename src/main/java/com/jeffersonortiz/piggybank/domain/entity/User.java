@@ -1,6 +1,11 @@
 package com.jeffersonortiz.piggybank.domain.entity;
 
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Getter;
+import lombok.Setter;
+import lombok.Singular;
+import lombok.ToString;
 
 import javax.persistence.*;
 import java.util.Set;
@@ -10,7 +15,6 @@ import java.util.Set;
 @Setter
 @Builder
 @AllArgsConstructor
-@NoArgsConstructor
 @ToString
 @Table(name = "user")
 public class User {
@@ -20,7 +24,8 @@ public class User {
   private String name;
   private String lastName;
   private String uuidLogin;
-  @OneToMany
-  @JoinColumn(name = "user", referencedColumnName = "user")
+  @OneToMany(cascade = CascadeType.ALL)
+  @JoinColumn(name = "user")
+  @Singular
   private Set<LoginProvider> providers;
 }

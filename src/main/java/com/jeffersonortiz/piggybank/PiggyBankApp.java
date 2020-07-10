@@ -1,5 +1,6 @@
 package com.jeffersonortiz.piggybank;
 
+import com.jeffersonortiz.piggybank.domain.dto.LoginProviderDTO;
 import com.jeffersonortiz.piggybank.domain.dto.UserDTO;
 import com.jeffersonortiz.piggybank.repository.IUserRepository;
 import com.jeffersonortiz.piggybank.service.AdminManagement;
@@ -17,11 +18,19 @@ public class PiggyBankApp {
   @Bean
   public CommandLineRunner demo(){
     return (args -> {
-      userRepository.createUser(UserDTO.builder()
-              .name("Jefferson")
-              .lastName("Ortiz")
-              .uuid("XXfffasdaqw44523244")
-              .build());
+      LoginProviderDTO provider = LoginProviderDTO.builder()
+          .kind("EMAIL")
+          .value("jeffliveco16@gmail.com")
+          .build();
+
+      UserDTO user = UserDTO.builder()
+        .name("Jefferson")
+        .lastName("Ortiz")
+        .uuid("XXfffasdaqw44523244")
+        .provider(provider)
+        .build();
+
+      userRepository.createUser(user);
     });
   }
 
