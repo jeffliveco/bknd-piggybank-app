@@ -16,6 +16,7 @@ public class TrackingController {
     private Tracking trackingService;
 
     @GetMapping("/coin")
+    @CrossOrigin(origins = "http://localhost:3000")
     public ResponseEntity<Double> getTotalCoins() {
         try {
             return new ResponseEntity(trackingService.getTotalCoins(), HttpStatus.OK);
@@ -25,6 +26,7 @@ public class TrackingController {
     }
 
     @GetMapping("/coin/{coin}")
+    @CrossOrigin(origins = "http://localhost:3000")
     public ResponseEntity<Double> getTotalCoins(@PathVariable Integer coin) {
         try {
             return new ResponseEntity(trackingService.getCountByCoin(coin), HttpStatus.OK);

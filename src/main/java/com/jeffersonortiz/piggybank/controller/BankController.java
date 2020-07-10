@@ -17,6 +17,7 @@ public class BankController {
     private Bank bankService;
 
     @PostMapping("/add-cash")
+    @CrossOrigin(origins = "http://localhost:3000")
     public ResponseEntity<String> addCash(@RequestBody AddCoinRequestDTO coinRequest) {
         try {
             bankService.addCash(coinRequest.getValue());
@@ -27,6 +28,7 @@ public class BankController {
     }
 
     @GetMapping("/account")
+    @CrossOrigin(origins = "http://localhost:3000")
     public ResponseEntity<Double> getTotalAccount() {
         try {
             return new ResponseEntity(bankService.getTotalCash(), HttpStatus.OK);
@@ -36,6 +38,7 @@ public class BankController {
     }
 
     @GetMapping("/account/{coin}")
+    @CrossOrigin(origins = "http://localhost:3000")
     public ResponseEntity<Double> getTotalAccount(@PathVariable Integer coin) {
         try {
             return new ResponseEntity(bankService.getCashByCoin(coin), HttpStatus.OK);
