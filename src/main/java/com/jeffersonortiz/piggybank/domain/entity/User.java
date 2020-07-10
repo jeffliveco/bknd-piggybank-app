@@ -28,4 +28,6 @@ public class User {
   @JoinColumn(name = "user")
   @Singular
   private Set<LoginProvider> providers;
+  @OneToOne
+  private SavingsAccount account;
 }
